@@ -12,10 +12,9 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Interactive VLAN
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -30,13 +29,13 @@
           header
           class="text-grey-8"
         >
-          Essential Links
+          Lektionen
         </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item-section>
+          <q-btn replace to="/" label="VLAN" />
+          <q-btn replace to="/pkindex" label="Prozesskostenrechnung" />
+          <q-btn replace to="/kzindex" label="Wirtschaftliche Kennzahlen" />
+        </q-item-section>
       </q-list>
     </q-drawer>
 

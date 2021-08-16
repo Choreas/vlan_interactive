@@ -9,7 +9,8 @@
     "lint": "eslint --ext .js,.ts,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
     "serve": "tsc --build tsconfig.json && quasar dev -m android --ide",
-    "build": "tsc --build tsconfig.json && quasar build -m android --ide"
+    "build": "tsc --build tsconfig.json && quasar build -m android --ide",
+    "buildbrowser": "tsc --build tsconfig.json && quasar build -m browser"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

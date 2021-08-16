@@ -5,7 +5,10 @@ const routes: RouteConfig[] = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Index.vue') },
+      { path: 'step2', component: () => import('pages/Step2.vue') },
+      { path: 'pkindex', component: () => import('pages/OuG/Prozesskostenrechnung-Index.vue') },
+      { path: 'kzindex', component: () => import('pages/OuG/Kennzahlen-Index.vue') },
     ]
   },
 
