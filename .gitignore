@@ -32,3 +32,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 .vscode
+src/layouts/debug.log
+debug.log
