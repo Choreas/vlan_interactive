@@ -7,6 +7,8 @@ const routes: RouteConfig[] = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'step2', component: () => import('pages/Step2.vue') },
+      { path: 'step3', component: () => import('pages/Step3.vue') },
+      { path: 'vlanfin', component: () => import('pages/VlanFin.vue') },
       { path: 'pkindex', component: () => import('pages/OuG/Prozesskostenrechnung-Index.vue') },
       { path: 'kzindex', component: () => import('pages/OuG/Kennzahlen-Index.vue') },
     ]

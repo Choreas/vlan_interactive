@@ -1,5 +1,8 @@
 <template>
   <q-page class="lecture-page">
+    <q-breadcrumbs>
+      <q-breadcrumbs-el label="Schritt 1" />
+    </q-breadcrumbs>
     <div>
       Klaus arbeitet in einer Firma mit vier Abteilungen. Jede Abteilung hat einen Switch, an den alle Clients angeschlossen sind.
       Jeder Switch ist über sein eigenes Interface mit dem Router verbunden. Jede Abteilung besitzt Ihr eigenes Subnetz.
@@ -37,7 +40,7 @@
         </div>
       </div>
     </div>
-    <q-btn replace to="/step2" label="Weiter" :disable="!continueEnabled()" />
+    <q-btn replace to="/step2" label="Weiter" flat :disable="!continueEnabled()" />
   </q-page>
 </template>
 
