@@ -1,8 +1,8 @@
 {
-  "name": "com.changeme",
+  "name": "proj.choreas.synlearn",
   "version": "0.0.1",
-  "description": "null",
-  "productName": "changeme",
+  "description": "synasthetic learning courses",
+  "productName": "synasthetic learning",
   "author": "Choreas",
   "private": true,
   "scripts": {
