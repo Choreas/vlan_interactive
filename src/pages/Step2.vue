@@ -17,14 +17,19 @@
     </div>
     <q-stepper v-model="step" vertical flat header-nav done-color="green" class="col-6"> 
       <q-step :name="0" title="01" :done="stepDone(0)" >
-        <div>
+        <div class="row">
           Die VLANs wurden statisch eingerichtet, d.h. die Zuordnung der Clients zu einem VLAN ist portbasiert.
         </div>
+        <br>
         <div class="row">
-          <q-checkbox class="col-10" v-model="checkValues[1]" label="Wenn man an den Switch-Port, an den derzeit der PC EK3 angeschlossen ist, ein anderes Gerät anschließt, befindet dieses Gerät sich automatisch in VLAN 40." />
+          Wenn man an den Switch-Port, an den derzeit der PC EK3 angeschlossen ist, ein anderes Gerät anschließt, befindet dieses Gerät sich automatisch in VLAN 40.
         </div>
         <div class="row">
-          <div class="jo" v-if="checkValues[1]">
+          <q-checkbox v-model="checkValues[1]" label="Richtig" />
+          <q-checkbox v-model="checkValues[8]" label="Falsch" />
+        </div>
+        <div class="row">
+          <div class="jo" v-if="checkValues[1] && !checkValues[8]">
             Richtig. Im statischen Setup erfolgt die Zuordnung portbasiert.
           </div>
         </div>
@@ -184,7 +189,8 @@ export default defineComponent({
       4: false,
       5: false,
       6: false,
-      7: false
+      7: false,
+      8: false
     })
 
     const selectValues = ref({
@@ -209,7 +215,7 @@ export default defineComponent({
 
     function stepDone(stepnum: number): boolean {
       switch(stepnum) {
-        case 0: return checkValues.value[1];
+        case 0: return checkValues.value[1] && !checkValues.value[8];
         case 1: return selectValues.value[1] === 'Access' && selectValues.value[2] === '40: Einkauf';
         case 2: return !checkValues.value[2] && checkValues.value[3] && selectValues.value[3] === 'Trunk';
         case 3: return !checkValues.value[4] && checkValues.value[5] && checkValues.value[6] && !checkValues.value[7];
